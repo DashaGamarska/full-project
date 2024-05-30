@@ -1,0 +1,47 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 56px;
+  text-align: center;
+}
+
+.thank_you_message {
+  margin-bottom: 16px;
+}
+
+.wrapper .text {
+  max-width: 768px;
+}
+
+.wrapper .link {
+  @include breakpoint('all-devices-without-desktop') {
+    width: 327px;
+  }
+
+  @include breakpoint('mobile-small') {
+    width: 100%;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 287px;
+  }
+}
+
+.img {
+  width: 160px;
+  height: 160px;
+
+  @include breakpoint('desktop') {
+    width: 196px;
+    height: 196px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 228px;
+    height: 228px;
+  }
+}

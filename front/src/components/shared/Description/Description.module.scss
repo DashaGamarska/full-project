@@ -1,0 +1,69 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.decorationWrapper {
+  @include breakpoint('desktop') {
+    max-width: 356px;
+  }
+}
+
+.decorationTitle {
+  margin-bottom: 16px;
+}
+
+.costSymbol {
+  color: var(--cl-primary-500);
+  width: 18px;
+  height: 18px;
+}
+
+.decorationDescription {
+  margin-bottom: 24px;
+}
+
+.decorationCostWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.decorationCost {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.decorationQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.decorationCount svg {
+  width: 100%;
+  height: 100%;
+}
+
+.decorationAccordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.costWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,127 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.card {
+  display: flex;
+  column-gap: 16px;
+  border-bottom: 1px solid var(--cl-secondary-200);
+  padding: 24px 0;
+
+  @include breakpoint('desktop-large') {
+    column-gap: 24px;
+  }
+}
+
+.card:nth-child(odd) {
+  border-top: 1px solid var(--cl-secondary-200);
+}
+
+.card__img_container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  width: 70px;
+  height: 70px;
+
+  @include breakpoint('tablet-small') {
+    width: 143px;
+    height: 143px;
+  }
+
+  @include breakpoint('tablet-large') {
+    width: 143px;
+    height: 143px;
+  }
+
+  @include breakpoint('desktop') {
+    width: 108px;
+    height: 108px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 78px;
+    height: 78px;
+  }
+}
+
+.img_container img {
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card__block {
+  flex: 1;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 12px;
+  margin-bottom: 16px;
+
+  @include breakpoint('tablet-large-and-up') {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+
+.card__info {
+  @include breakpoint('desktop') {
+    max-width: 232px;
+  }
+
+  @include breakpoint('desktop-large') {
+    max-width: 260px;
+  }
+}
+
+.card__info .card__title {
+  color: var(--cl-primary-800);
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  @include breakpoint('desktop-large') {
+    margin-bottom: 8px;
+  }
+}
+
+.card__info .card__description {
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 14px;
+  }
+}
+
+.card__info .pinkText {
+  color: var(--cl-primary-500);
+}
+
+.card__actions {
+  display: flex;
+  column-gap: 70px;
+  align-items: flex-end;
+
+  @include breakpoint('desktop-large') {
+    justify-content: space-between;
+  }
+}
+
+.card__actions .buttonGroup {
+  width: 90px;
+  height: 44px;
+  padding: 8px;
+  gap: 11px;
+}
+
+.card__actions > button {
+  all: unset;
+}
+
+.card__actions .delete {
+  color: var(--cl-gray-400);
+  cursor: pointer;
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../../../scss/utilities/breakpoint-mixin.scss';
+
+.img_container {
+  flex: none;
+}
+
+.img_container,
+.img_inner_container {
+  border-radius: 20px;
+  width: 100%;
+  height: 185px;
+
+  @include breakpoint('tablet-small') {
+    height: 308px;
+  }
+
+  @include breakpoint('tablet-large') {
+    height: 354px;
+  }
+
+  @include breakpoint('desktop') {
+    width: 480px;
+    height: 480px;
+  }
+  @include breakpoint('desktop-large') {
+    width: 515px;
+    height: 515px;
+  }
+}
+
+.img_inner_container {
+  position: relative;
+}
+
+.image {
+  border-radius: 20px;
+  object-position: center 30%;
+}
+
+/* Styles for dots*/
+
+.dots {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    @include breakpoint('mobile-large-and-up') {
+      top: 20px;
+    }
+  
+    @include breakpoint('desktop-large') {
+      top: 30px;
+    }
+  }
+  

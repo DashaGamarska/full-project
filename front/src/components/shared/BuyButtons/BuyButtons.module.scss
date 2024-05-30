@@ -1,0 +1,25 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.candleBuyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  @include breakpoint('tablet-large') {
+    margin-left: auto;
+    width: 352px;
+  }
+
+  @include breakpoint('desktop') {
+    width: 356px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 486px;
+  }
+}
+
+.candleBuy {
+  width: 100%;
+}

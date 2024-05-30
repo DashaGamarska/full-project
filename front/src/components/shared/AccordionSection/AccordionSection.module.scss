@@ -1,0 +1,25 @@
+.accordionSection {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cl-primary-200);
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggleIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggleIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.accordionContent {
+  margin-top: 16px;
+}

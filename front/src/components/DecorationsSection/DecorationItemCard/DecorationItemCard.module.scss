@@ -1,0 +1,49 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.card {
+  overflow: hidden;
+}
+
+.img_container {
+  overflow: hidden;
+  position: relative;
+  height: 183px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+
+  @include breakpoint('tablet-small') {
+    height: 314px;
+  }
+
+  @include breakpoint('tablet-large') {
+    margin-bottom: 16px;
+    height: 248px;
+  }
+
+  @include breakpoint('desktop') {
+    height: 328px;
+  }
+
+  @include breakpoint('desktop-large') {
+    height: 314px;
+  }
+}
+
+.img_container img {
+  border-radius: 20px;
+  transition: transform var(--animat) 0s;
+}
+
+.card:hover .img_container img {
+  transform: scale(1.2);
+}
+
+.title {
+  color: var(--cl-gray-400);
+  transition: color var(--animat);
+}
+
+.title:hover,
+.title:focus {
+  color: var(--cl-gray-900);
+}

@@ -1,0 +1,26 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+#gallery_details_section {
+  @include breakpoint('desktop-large') {
+    padding-bottom: 104px;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint('tablet-large-and-up') {
+    flex-direction: row;
+  }
+  @include breakpoint('desktop') {
+    gap: 140px;
+    align-items: flex-start;
+  }
+
+  gap: 140px;
+  @include breakpoint('desktop-large') {
+    gap: 126px;
+    align-items: flex-start;
+  }
+}

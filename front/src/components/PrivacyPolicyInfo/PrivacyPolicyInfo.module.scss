@@ -1,0 +1,21 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.privacySection {
+  @include breakpoint('desktop-large') {
+    padding-bottom: 114px;
+  }
+}
+
+.privacyTitle {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.privacySubTitle {
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.privacyText {
+  margin-bottom: 32px;
+}

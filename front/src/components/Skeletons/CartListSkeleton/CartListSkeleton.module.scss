@@ -1,0 +1,13 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.wrapper {
+  width: 100%;
+
+  @include breakpoint('desktop') {
+    width: 480px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 588px;
+  }
+}

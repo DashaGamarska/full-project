@@ -1,0 +1,62 @@
+.radioButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.radioButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.radioButtonsLabel {
+  display: flex;
+  padding-left: 24px;
+  position: relative;
+  align-items: center;
+}
+
+.radioButtonsInput {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.radioButtonsIcon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  text-align: center;
+
+  top: 0;
+  left: 0;
+  border: 1px solid var(--cl-gray-300);
+  background-color: var(--cl-gray-100);
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition:
+    background-color var(--animat),
+    background-image var(--animat);
+
+  .radioButtonsInput:checked + & {
+    border-color: transparent;
+    background-color: var(--cl-blue-400);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: border-box;
+  }
+}

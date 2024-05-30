@@ -1,0 +1,116 @@
+@import '../../../../scss/utilities/breakpoint-mixin.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakpoint('tablet-large-and-up') {
+    flex-direction: row;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include breakpoint('desktop-large') {
+    gap: 75px;
+  }
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.content .title {
+  margin-bottom: 10px;
+  color: var(--cl-gray-500);
+  transition: color var(--animat);
+
+  &:hover,
+  &:focus {
+    color: var(--cl-gray-400);
+  }
+}
+
+.content .text {
+  hyphens: auto;
+  color: var(--cl-black);
+  @include breakpoint('mobile-large-and-up') {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  @include breakpoint('desktop-large') {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+}
+
+//=================================================
+// Price
+//=================================================
+
+.card .price {
+  font-weight: 700;
+  @include breakpoint('only-mobile') {
+    font-size: 26px;
+  }
+
+  @include breakpoint('tablet-small-and-up') {
+    font-size: 36px;
+    line-height: 1.44;
+  }
+}
+
+.card .price + span {
+  font-size: 30px;
+  @include breakpoint('only-mobile') {
+    font-size: 23px;
+  }
+}
+//================================================
+
+//=================================================
+// Button
+//=================================================
+
+.button__container {
+  margin-top: 20px;
+}
+
+.button__container button {
+  margin-right: 22px;
+  min-width: 130px;
+}
+
+.button__container a {
+  display: inline-block;
+  padding: 16px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.54;
+  text-transform: uppercase;
+
+  background-color: var(--cl-gray-600);
+  color: var(--cl-white);
+  transition: background-color var(--animat);
+
+  @include breakpoint('mobile-small') {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  @include breakpoint('tablet-small-and-up') {
+    padding: 16px 32px;
+  }
+}
+
+.button__container a:hover {
+  background-color: var(--cl-gray-400);
+}
+
+.button__container a:focus {
+  background-color: var(--cl-gray-200);
+}
+//====================================================

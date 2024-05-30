@@ -1,0 +1,85 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.form {
+  width: 100%;
+
+  @include breakpoint('desktop') {
+    width: 356px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 486px;
+  }
+}
+
+.form__group {
+  all: unset;
+  display: block;
+  width: 100%;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.group__title {
+  color: var(--cl-gray-500);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5; /* 24px */
+}
+
+.group__title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.contactInfo__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.phoneInput__container {
+  width: 100%;
+}
+
+.phoneInput__container > div > button {
+  padding-left: 12px;
+}
+
+.phoneInput__container input {
+  flex: 1 1 auto;
+}
+
+.phoneInput__container input,
+.phoneInput__container input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.phoneInput__container input::placeholder {
+  color: var(--cl-gray-200);
+}
+
+.label {
+  display: inline-block;
+  color: var(--cl-gray-500);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.button {
+  width: 100%;
+}
+
+/* Error */
+.error {
+  margin-top: 4px;
+  color: var(--cl-error-500);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5; /* 21px */
+}

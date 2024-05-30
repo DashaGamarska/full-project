@@ -1,0 +1,28 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.list {
+  width: 100%;
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 19px;
+  row-gap: 20px;
+
+  @include breakpoint('only-mobile') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint('tablet-large') {
+    column-gap: 24px;
+    row-gap: 30px;
+  }
+
+  @include breakpoint('desktop') {
+    column-gap: 20px;
+  }
+
+  @include breakpoint('desktop-large') {
+    column-gap: 24px;
+    row-gap: 40px;
+  }
+}

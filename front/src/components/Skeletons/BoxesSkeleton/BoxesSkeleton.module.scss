@@ -1,0 +1,11 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 56px;
+
+  @include breakpoint('desktop-large') {
+    row-gap: 80px;
+  }
+}

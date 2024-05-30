@@ -1,0 +1,86 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 24px;
+
+  @include breakpoint('tablet-small-and-up') {
+    height: 798px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  & .image {
+    transition: transform var(--animat) 0s;
+  }
+
+  &:hover .image {
+    transform: scale(1.05);
+  }
+
+}
+
+.candle {
+  height: 360px;
+
+  @include breakpoint('tablet-small-and-up') {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: aquamarine;
+    height: 798px;
+  }
+}
+
+.box {
+  height: 360px;
+
+  @include breakpoint('tablet-small-and-up') {
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: blue;
+    height: 387px;
+  }
+}
+
+.create {
+  height: 360px;
+
+  @include breakpoint('tablet-small-and-up') {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: blueviolet;
+    height: 387px;
+  }
+}
+
+.image {
+  border-radius: 20px;
+  height: 100%;
+}
+
+.gradient {
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0.00) 0%, rgba(6, 6, 6, 0.87) 86.09%, #060606 100%);
+}
+
+.text {
+  position: absolute;
+  bottom: 0;
+  padding: 40px 0px;
+  width: 100%;
+  text-align: center;
+}

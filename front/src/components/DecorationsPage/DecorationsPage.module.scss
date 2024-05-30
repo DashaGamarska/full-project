@@ -1,0 +1,13 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.waxDescAboveCandles {
+  @include breakpoint('all-devices-without-desktop') {
+    display: none;
+  }
+}
+
+.waxDescBelowCandles {
+  @include breakpoint('desktop-large') {
+    display: none;
+  }
+}

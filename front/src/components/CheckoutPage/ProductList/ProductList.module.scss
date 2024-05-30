@@ -1,0 +1,48 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.list {
+  margin-bottom: 24px;
+}
+
+.total,
+.list {
+  width: 100%;
+
+  @include breakpoint('desktop') {
+    width: 480px;
+  }
+
+  @include breakpoint('desktop-large') {
+    width: 588px;
+  }
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total > p {
+  @include breakpoint('desktop-large') {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.44;
+  }
+}
+
+.price_container {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cl-primary-500);
+}
+
+.price {
+  text-transform: uppercase;
+}
+
+.price_container span {
+  line-height: 1.44;
+  font-size: 24px;
+}

@@ -1,0 +1,56 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.section {
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  @include breakpoint('desktop-large') {
+    padding-bottom: 56px;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.crumb {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cl-primary-200);
+  position: relative;
+}
+
+.link::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: var(--cl-primary-200);
+  transition:
+    width var(--animat),
+    left var(--animat);
+  width: 0;
+}
+
+.link:hover:not(.noHover)::after {
+  width: 100%;
+  left: 0;
+}
+
+.separator {
+  width: 16px;
+  height: 16px;
+  color: var(--cl-primary-200);
+}

@@ -1,0 +1,28 @@
+@import '../../../scss/utilities/breakpoint-mixin.scss';
+
+.price__container {
+  display: flex;
+  gap: 4px;
+}
+
+.price__container.primary {
+  align-items: baseline;
+}
+
+.price__container.secondary {
+  align-items: center;
+}
+
+.primarySpan {
+  color: var(--cl-primary-500);
+ font-size: 18px; 
+}
+
+.secondarySpan {
+  color: var(--cl-gray-700);
+  font-size: 12px; 
+
+  @include breakpoint('tablet-large-and-up') {
+    font-size: 28px; 
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  /*Mobile styles (from 0 to 374.98px )*/
+  @include breakpoint('mobile-small') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /*Mobile styles (from 375x to 666.98px)*/
+  @include breakpoint('mobile-large') {
+    max-width: 375px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /*Mobile landscape styles (from 667px and above)*/
+  @include breakpoint('tablet-small') {
+    max-width: 667px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /*Tablet styles (from 768px to 1023.98px)*/
+  @include breakpoint('tablet-large') {
+    max-width: 768px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /*Laptop styles (from 1024px to 1230px)*/
+  @include breakpoint('desktop') {
+    max-width: 1024px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /*Desktop styles (from 1230px and above)*/
+  @include breakpoint('desktop-large') {
+    max-width: 1230px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

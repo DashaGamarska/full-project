@@ -1,0 +1,117 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-align: center;
+  border-top: 2px solid var(--cl-secondary-200);
+  position: relative;
+  background-color: var(--cl-white);
+
+  @include breakpoint('desktop-large') {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @include breakpoint('desktop-large') {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 94px;
+  }
+
+  @include breakpoint('all-devices-without-desktop') {
+    align-items: center;
+  }
+}
+
+.addressList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactUsText {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.addressLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--cl-gray-700);
+  transition: color var(--animat);
+
+  &:hover {
+    color: var(--cl-primary-500);
+    transition: color var(--animat);
+  }
+}
+
+.addressTypography {
+  font-style: normal;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  @include breakpoint('desktop-large') {
+    gap: 8px;
+  }
+}
+
+.copyrightLink {
+  cursor: pointer;
+  color: var(--cl-gray-400);
+  transition: color var(--animat);
+
+  &:hover {
+    color: var(--cl-primary-500);
+    transition: color var(--animat);
+  }
+}
+
+.copyWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  @include breakpoint('all-devices-without-desktop') {
+    flex-direction: column;
+    margin-top: 4px;
+  }
+}
+
+.copyrightCraftedElegance {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  @include breakpoint('all-devices-without-desktop') {
+    margin-top: 8px;
+  }
+}
+
+.footerNavigation {
+  gap: 16px;
+
+  @include breakpoint('desktop-large') {
+    gap: 24px;
+  }
+}

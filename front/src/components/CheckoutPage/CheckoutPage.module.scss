@@ -1,0 +1,15 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 56px;
+
+  @include breakpoint('tablet-large') {
+    row-gap: 40px;
+  }
+
+  @include breakpoint('only-mobile-and-tablet') {
+    flex-direction: column;
+  }
+}

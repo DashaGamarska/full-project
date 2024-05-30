@@ -1,0 +1,23 @@
+import ContentLoader from 'react-content-loader';
+
+const CartListTabLargeSkeleton = () => {
+  return (
+    <ContentLoader
+      speed={2}
+      width={720}
+      height={218}
+      viewBox="0 0 720 218"
+      backgroundColor="#f3f3f3"
+      foregroundColor="#ecebeb"
+    >
+      <rect x="0" y="0" rx="20" ry="20" width="107" height="107" />
+      <rect x="123" y="0" rx="2" ry="2" width="150" height="16" />
+      <rect x="600" y="0" rx="10" ry="10" width="100" height="25" />
+      <rect x="123" y="30" rx="2" ry="2" width="200" height="16" />
+      <rect x="123" y="100" rx="20" ry="20" width="106" height="44" />
+      <rect x="300" y="120" rx="2" ry="2" width="70" height="16" />
+    </ContentLoader>
+  );
+};
+
+export default CartListTabLargeSkeleton;

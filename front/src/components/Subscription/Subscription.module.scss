@@ -1,0 +1,65 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.subscription {
+  text-align: left;
+
+  @include breakpoint('desktop-large') {
+    padding-bottom: 114px;
+  }
+}
+
+.subscriptionTitle {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+@include breakpoint('tablet-small-and-up') {
+  .subscriptionTitle {
+    max-width: 286px;
+  }
+}
+
+@include breakpoint('only-mobile') {
+  .subscriptionTypography {
+    margin-bottom: 24px;
+  }
+}
+
+@include breakpoint('tablet-small-and-up') {
+  .subscriptionWrapper {
+    display: flex;
+    margin-top: 24px;
+    gap: 16px;
+  }
+}
+
+@include breakpoint('desktop-large') {
+  .subscriptionWrapper {
+    gap: 40px;
+  }
+}
+
+.subscriptionButton {
+  align-self: flex-start;
+}
+
+@include breakpoint('only-mobile') {
+  .subscriptionButton {
+    width: calc(100%);
+    margin-top: 16px;
+  }
+}
+
+@include breakpoint('tablet-small-and-up') {
+  .subscriptionButton {
+    width: 193px;
+  }
+}
+
+.subscriptionWrapper .subscriptionInput {
+  padding: 16px 24px;
+
+  @include breakpoint('tablet-small-and-up') {
+    width: 400px;
+  }
+}

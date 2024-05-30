@@ -1,0 +1,152 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.body {
+  position: relative;
+}
+
+.slider_body {
+  border-radius: 20px;
+  position: relative;
+  height: 360px;
+}
+
+.bgImage {
+  border-radius: 20px;
+}
+
+.content {
+  position: absolute;
+  left: 16px;
+  top: 40px;
+  z-index: 1;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  @include breakpoint('mobile-small') {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+}
+
+.hero_link {
+  width: 278px;
+}
+
+/* Styles for controls */
+
+.controls {
+  position: absolute;
+  bottom: 44px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  z-index: 1;
+}
+
+.prevButton,
+.nextButton {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6px;
+  background-color: rgba(255, 248, 249, 0.5);
+
+  cursor: pointer;
+
+  transition: background-color var(--animat);
+}
+
+.prevButton.disabled,
+.nextButton.disabled {
+  background-color: rgba(236, 236, 236, 0.3);
+}
+
+.prevButton.disabled .arrowIcon,
+.nextButton.disabled .arrowIcon {
+  color: var(--cl-gray-100);
+}
+
+.arrowIcon {
+  color: var(--cl-primary-500);
+  width: 30px;
+  height: 30px;
+}
+
+.prevButton:hover:not(:disabled),
+.nextButton:hover:not(:disabled) {
+  background-color: var(--cl-secondary-100);
+}
+
+/* Styles for dots*/
+
+.dots {
+  margin-top: 16px;
+}
+
+/*Mobile landscape styles */
+@media (min-width: 667px) {
+  .slider_body {
+    height: 400px;
+  }
+}
+
+/* Mobile landscape and tablet styles*/
+@media (min-width: 667px) and (max-width: 1229.98px) {
+  .content {
+    top: 40px;
+    left: 40px;
+  }
+}
+
+/*Tablet styles */
+@media (min-width: 768px) {
+  .slider_body {
+    height: 500px;
+  }
+
+  .controls {
+    bottom: 52px;
+    right: 24px;
+  }
+}
+
+/* Laptop styles */
+@media (min-width: 1024px) {
+  .slider_body {
+    height: 600px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1230px) {
+  .slider_body {
+    height: 650px;
+  }
+
+  .content {
+    left: 80px;
+    top: 80px;
+  }
+
+  .controls {
+    bottom: 76px;
+    right: 40px;
+  }
+
+  .dots {
+    margin-top: 24px;
+  }
+}

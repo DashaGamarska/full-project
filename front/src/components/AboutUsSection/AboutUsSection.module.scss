@@ -1,0 +1,74 @@
+@import '../../scss/utilities/breakpoint-mixin.scss';
+
+.title {
+  text-align: center;
+  margin-bottom: 24px;
+
+  @include breakpoint('desktop-large') {
+    margin-bottom: 56px;
+  }
+}
+
+.aboutUsContent {
+  @include breakpoint('desktop-large') {
+    display: flex;
+    justify-content: space-between;
+    gap: 126px;
+  }
+}
+
+.aboutUsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aboutUsTextWrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(100%);
+  gap: 16px;
+  margin-bottom: 16px;
+
+  @include breakpoint('desktop') {
+    max-width: 933px;
+  }
+
+  @include breakpoint('desktop-large') {
+    max-width: 588px;
+  }
+}
+
+.aboutUsImagesWrapper {
+  display: none;
+  @include breakpoint('desktop-large') {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.aboutUsImageContainer {
+  width: calc(100%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 285px;
+  object-fit: cover;
+
+  @include breakpoint('tablet-small') {
+    height: 400px;
+  }
+
+  @include breakpoint('tablet-small-and-up') {
+    height: 450px;
+  }
+
+  @include breakpoint('desktop-large') {
+    height: 621px;
+    width: 486px;
+  }
+}
+
+.aboutUsImage {
+  border-radius: 20px;
+}

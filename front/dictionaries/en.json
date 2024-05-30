@@ -1,0 +1,432 @@
+{
+  "page": {
+    "home": {
+      "hero": {
+        "heading": [
+          [
+            "Embrace your inner hero",
+            "with handcrafted jewelry -",
+            "Be unique, be you!"
+          ],
+          [
+            "Embrace your inner hero",
+            "awith handcrafted jewelry -",
+            "Be unique, be you!"
+          ],
+          [
+            "Embrace your inner hero",
+            "with handcrafted jewelry -",
+            "Be unique, be you!"
+          ]
+        ],
+        "buttonText": "View the Catalog"
+      },
+      "about": {
+        "title": "About us",
+        "text1": "CraftedElegance is where art meets elegance. We are a unique destination offering handcrafted jewelry that reflects the beauty and individuality of each person.",
+        "text2": "Our mission is to help you express your style and personality through our refined and expertly crafted pieces. From classic to contemporary, we provide a wide selection of unique adornments that will make your look truly distinctive. Each piece is infused with the passion and skill of our artisans, and we are delighted to share this with you.",
+        "text3": "Join our CraftedElegance community and let us assist you in finding the perfect accessory that enhances your uniqueness and allure."
+      },
+
+      "compass": {
+        "decorations": "Decorations",
+        "bags": "Bags",
+        "embroidery": "Embroidery"
+      },
+      "subscription": {
+        "title": "Subscribe to our newsletter",
+        "text": "Get exclusive offers and keep up to date with all our new products",
+        "buttonText": "Subscribe"
+      }
+    },
+    "decorations": {
+      "bracelet": {
+        "waxDesc": {
+          "title": "Why soy?",
+          "text": "Soy wax is safe. It is not toxic and does not evaporate harmful substances. The low melting point allows you to use candles as long as possible. It is a vegetable wax that is produced from soybeans - a natural and restorative product. Soy wax has a good performance in the solid and molten state of both essential oils and specially formulated synthetic oils."
+        }
+      },
+      "earrings": {
+        "waxDesc": {
+          "title": "Why palm?",
+          "text": "Palm wax is obtained from the fruits of palm trees that grow in tropical regions. Palm wax has a high melting point, which allows candles to burn longer. You will enjoy the warm and cozy atmosphere created by candles with palm wax for a long time. And the frosty patterns of palm wax will enchant you."
+        }
+      },
+      "necklace": {
+        "waxDesc": {
+          "title": "Why coconut?",
+          "text": "Coconut wax is a natural product. By choosing coconut wax for your candles, you help preserve the environment and support nature. This wax has a natural and pleasant coconut aroma, which adds a special charm to your candles. It creates a warm and cozy atmosphere in any room. Most often used for massage candles."
+        }
+      },
+      "tabs": {
+        "fullTitle": ["Decorations", "Bracelet", "Earrings"],
+        "abbreviatedTitle": ["Decorations", "Bracelet", "Earrings"]
+      },
+      "filter": {
+        "title": "Filter",
+        "subtitle": "Price",
+        "up": "From lower to higher",
+        "down": "From higher to lower",
+        "cleanUp": "Clear",
+        "result": "Result",
+        "cleanFilter": "Clean the filter",
+        "category": {
+          "aroma": {
+            "title": "Aroma",
+            "option": [
+              "Rose Petals",
+              "Pure cotton",
+              "Cinnamon and Vanilla",
+              "Banana-walnut bread",
+              "Dry Gin",
+              "Fresh coffee",
+              "Pumpkin with spices",
+              "Grapefruit and Mint",
+              "Freshly cut grass",
+              "Black Sea",
+              "Ginger and Spices",
+              "Magnolia and Peony",
+              "Peach Nectar",
+              "Mango and coconut milk",
+              "White sage and lavender",
+              "Fallen leaves",
+              "Cashmere Plum",
+              "Christmas bonfire",
+              "Fraser's Spruce",
+              "Mountain fog",
+              "The smell of the earth after the rain",
+              "Baked milk",
+              "Chocolate",
+              "Banana",
+              "Pine forest",
+              "Caramel",
+              "Jasmine",
+              "Orange",
+              "Cinnamon",
+              "Chanel No. 5"
+            ]
+          },
+          "color": {
+            "title": "Color",
+            "option": [
+              "Yellow",
+              "Red",
+              "Black",
+              "Green",
+              "Blue",
+              "Orange",
+              "Violet",
+              "Lavender",
+              "Blue",
+              "White",
+              "Brown",
+              "Pink",
+              "Milk (wax color)"
+            ]
+          },
+          "container": {
+            "title": "Container",
+            "option": ["30", "50", "100", "150", "200", "250", "300"],
+            "volumeLabel": "ml"
+          }
+        }
+      }
+    },
+
+    "bags": {
+      "header": {
+        "title": "Boxes for your creativity"
+      },
+      "info": {
+        "title": "Boxes for your creativity",
+        "text": "Each box is created for the most pleasant emotions. Plunge into this unusual atmosphere, become a real candlestick maker, create a miracle with your own hands. These magical boxes will decorate your evening with a girlfriend or friend, or with a loved one, or give you complete freedom and meditative silence to create a candle on your own. In each box, you will receive an instruction that will help you get everything right."
+      },
+      "section": {
+        "buyBtn": "Buy",
+        "reviewBtn": "Review"
+      }
+    },
+    "embroidery": {
+      "header": {
+        "title": "Embroidery"
+      },
+      "info": {
+        "title": "Embroidery",
+        "text": "Discover our stunning collection of embroidered shirts, capturing beauty and original design.Embrace uniqueness and national charm with our embroidered shirts – a symbol of Ukrainian culture and tradition."
+      },
+      "section": {
+        "buyBtn": "Buy",
+        "reviewBtn": "Review"
+      }
+    },
+    "paymentAndDelivery": {
+      "header": {
+        "title": "Payment and Delivery"
+      },
+      "paymentOptions": {
+        "subTitle": "Payment Options",
+        "description": "Full payment to the account of the Individual Entrepreneur (IE) or a minimum prepayment of 150 Ukrainian hryvnias."
+      },
+      "deliveryOptions": {
+        "subTitle": "Delivery Options",
+        "time": "Shipment is processed within 3-5 business days.",
+        "methods": {
+          "title": "Possible delivery options include:",
+          "availableMethods": [
+            "- To the Nova Poshta branch",
+            "- To the Nova Poshta automated parcel locker",
+            "- To the Ukrposhta branch"
+          ]
+        },
+        "paymentInfo": "Delivery payment is not included in the product's price and is paid by the recipient at the New Mail office, according to New Mail's tariffs, except for cases of online delivery payment."
+      }
+    },
+    
+    "privacyPolicy": {
+      "header": {
+        "title": "Privacy policy"
+      },
+      "info": {
+        "title": "Privacy policy",
+        "sections": [
+          {
+            "subTitle": "1. Confidentiality and Personal Data Protection",
+            "texts": [
+              "1.1. By providing their personal data on the Internet store's website during registration or order placement, the Buyer gives the Seller their voluntary consent to the processing, use (including transfer) of their personal data, as well as the performance of other actions provided for by the Law of Ukraine 'On Personal Data Protection,' without limitation of the term of such consent.",
+              "1.2. The Seller undertakes not to disclose the information received from the Buyer. It is not considered a breach for the Seller to provide information to counterparties and third parties acting under an agreement with the Seller, including for the fulfillment of obligations to the Buyer, as well as in cases where the disclosure of such information is required by the current legislation of Ukraine.",
+              "1.3. The Buyer is responsible for keeping their personal data up to date. The Seller is not responsible for the inadequate performance or non-performance of their obligations due to the inaccuracy of information about the Buyer or its inconsistency with reality."
+            ]
+          },
+          {
+            "subTitle": "2. Other Conditions",
+            "texts": [
+              "2.1. This agreement is concluded on the territory of Ukraine and is governed by the current legislation of Ukraine.",
+              "2.2. All disputes arising between the Buyer and the Seller are resolved through negotiations. In case of failure to resolve the disputed issue through negotiations, the Buyer and/or the Seller have the right to seek resolution of the dispute in the courts in accordance with the current legislation of Ukraine.",
+              "2.3. The Seller has the right to make changes to this Agreement unilaterally as provided in section 5.2.1 of the Agreement. In addition, changes to the Agreement may also be made by mutual agreement of the Parties in accordance with the current legislation of Ukraine."
+            ]
+          },
+          {
+            "subTitle": "Internet Store Security Policy",
+            "texts": [
+              "The administration of the internet store guarantees that the personal data provided to the website will be used properly.",
+              "The personal data and contact information of the website user/customer (the 'User') will not be disclosed to third parties, except as required by law or with the User's consent (as indicated below).",
+              "The administration of the internet store agrees not to send unwanted or unsolicited emails (spam) to Users, except for important business or communication emails to which the User has given consent. This includes greetings and information about ongoing discounts.",
+              "Registered Users can quickly and easily unsubscribe from receiving emails by simply clicking the 'Unsubscribe' link at the end of one of the emails."
+            ]
+          },
+          {
+            "subTitle": "Confidentiality",
+            "texts": [
+              "The administration of the internet store respects the personal information of all Users of our store. All activities of the internet store on the Internet are carried out in accordance with current European legislation and Ukrainian legislation. The rules for protecting personal data ('Security Policy') regulate the disclosure of information obtained by the internet store about Users (as mentioned above) who visit it. The administration of the internet store uses collected user personal data in accordance with Law No. 2297-VI 'On the Protection of Personal Data.'"
+            ]
+          },
+          {
+            "subTitle": "Collection and Processing of Personal Data",
+            "texts": [
+              "All Users can visit the internet store without disclosing any personal data. However, failure to provide the necessary information requested in the relevant information input sections and other sections of the website may result in the inability of the internet store to provide certain services and products to Users. If a User makes a purchase through the website or by phone, the User enters into contractual relations with the administration of the internet store. The User is asked to provide the necessary personal data during the transaction.",
+              "For the purpose of fulfilling user requests and other purposes as specified below, the internet store may request the following data from the User: name, surname, date of birth, gender, email and postal addresses, phone number, mobile phone number, age, and other data. The internet store also records data about the User's successful purchases. By voluntarily subscribing to the website or ordering products from the internet store, the User agrees (gives consent) to the inclusion of their personal data in the information system, both manually and automatically, in full and for the purposes specified below, in accordance with the law on the protection of personal data. If the User does not agree to this, they have the right not to use the website and not to provide their personal data to the administration of the internet store.",
+              "The administration of the internet store has the right to use disclosed data for the period required to achieve the relevant purpose of processing personal data and mandatory archiving, in accordance with applicable legislation, without harming the obligations of the internet store arising from special regulation. Giving consent to the processing of personal data is voluntary, and the User has the right to withdraw such consent by sending an email to the internet store's email address.",
+              "User rights regarding the processing of their personal data are established in the Personal Data Protection Act and include, among other things, the right to update or delete personal data from the internet store's information system. The User also has the right to receive a copy of personal data processed by the internet store and the right to appeal to the Data Protection Authority of Ukraine in case of suspicion of unauthorized use of personal data."
+            ]
+          },
+          {
+            "subTitle": "Other Ways of Obtaining Information",
+            "texts": [
+              "In addition to obtaining data through the website, the User may be offered to provide their personal data through written correspondence with the administration of the internet store, in a phone conversation with the administration of the internet store, when placing an order, submitting a service request, during the registration of purchased goods for warranty and post-warranty service, registration for participation in interactive surveys, or any business offers, in the process of exchanging real-time text messages, and so on. In such cases, the User will be separately asked to consent to the processing of their personal data by the administration of the internet store if such consent is required by law."
+            ]
+          },
+          {
+            "subTitle": "Purpose of Personal Data Collection and Processing",
+            "texts": [
+              "The administration of the internet store processes personal data for the following purposes:",
+              "Performing specific actions to fulfill purchase and sale transactions or other agreements between the administration of the internet store and the User, including payment monitoring and delivery of the User's order;",
+              "Providing relevant service support, including services related to the activities of the internet store, such as warranty and post-warranty service, gathering user opinions on the services and products of the internet store, offering Users special deals and promotional campaigns, conducting product surveys, handling user requests for information about the internet store, its products and services, informing the User about internet store updates, improving the store's products and services, and conducting lotteries, contests, and other promotional activities."
+            ]
+          },
+          {
+            "subTitle": "Use and Disclosure of Information to Third Parties",
+            "texts": [
+              "The administration of the internet store uses the obtained information solely for personal purposes as mentioned above. Employees of the internet store are obligated to respect the confidentiality of information provided by Users in accordance with applicable laws. Personal data may be disclosed to third parties in cases where the administration of the internet store reasonably deems it necessary. This may also occur for the purpose of preventing fraud, fulfilling obligations, protecting the rights of the internet store, or in cases of corporate changes, such as mergers, acquisitions, sales, or purchases of company assets, and so on."
+            ]
+          },
+          {
+            "subTitle": "Automatically Recorded Information (Non-Personal Data)",
+            "texts": [
+              "Upon entering the site (as a registered user), some non-personal information (browser type, number of visits, average visit duration, visited pages) is automatically recorded. This information is used to appropriately respond with the aim of improving the website's content and functionality. This information may be used by the administration of the internet store in the future or shared with third parties, except in cases where the User requests to cease such usage by contacting the store's email address."
+            ]
+          },
+          {
+            "subTitle": "Security+",
+            "texts": [
+              "The administration of the internet store intends to protect and manage the personal data of all users of its websites in accordance with Ukrainian law and the Personal Data Protection Act. The administration of the internet store has taken all necessary technical, organizational, and personal measures in accordance with Ukrainian laws, including the Personal Data Protection Act, to ensure the security and protection of user personal data from accidental unlawful destruction or loss, improper handling, unauthorized disclosure or access, as well as from other unlawful forms of use."
+            ]
+          },
+          {
+            "subTitle": "Minors",
+            "texts": [
+              "The administration of the internet store strongly recommends that all parents and guardians teach their children to safely and responsibly handle personal data on the internet. Individuals under 18 years of age should not disclose their personal data on the website without the consent of their parents or guardians. The administration of the internet store will never intentionally request personal data from individuals under 18 years of age or use them in any way, and the administration of the internet store confirms that Users of its website are 18 years of age and older."
+            ]
+          },
+          {
+            "subTitle": "Links to Other Websites",
+            "texts": [
+              "This Privacy Policy applies to the main page. Some pages on these websites may contain links to other organizations within or outside the internet store's structure. When Users leave the website, they are advised to follow the link and read the privacy policies for each website that collects personal data.",
+              "The administration of the internet store does not control the information contained on these websites, as well as the privacy policies applicable to these websites, and is not responsible for any content, goods, or services they offer. Using such websites linked to is subject to the terms and agreements applicable to such websites.",
+              "The right to receive information, newsletters, advertising messages, and their cancellation",
+              "The administration of the internet store welcomes requests from Users for information about the internet store's privacy policy, which can be sent to the store's email address. Users who do not wish to receive advertising messages (or newsletters) can unsubscribe by sending a corresponding request to this email address."
+            ]
+          },
+          {
+            "subTitle": "Notice of Changes",
+            "texts": [
+              "Users will be informed of any changes and additions made to this Privacy Policy. By using the website or ordering goods on the website following the notice of changes to the Security Policy, the User agrees to the changes contained in the updated version in full."
+            ]
+          }
+        ]
+      }
+    },
+    "checkout": {
+      "productList": {
+        "deleteButtonText": "Delete",
+        "totalText": "Total",
+        "descriptionPropertyNames": {
+          "container": "Container",
+          "wax": "Wax",
+          "aroma": "Aroma",
+          "wick": "Wick",
+          "color": "Color"
+        }
+      },
+      "form": {
+        "contactFormTitle": "Contact details",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "phoneNumber": "Enter your phone number",
+        "delivery": "Delivery",
+        "deliveryOptions": [
+          "Nova Poshta (Branch)",
+          "Nova Poshta (Parcel Locker)",
+          "Ukrposhta"
+        ],
+        "paymentOptions": [
+          "Cash on delivery - Delivery is made with payment upon receipt at 150 UAH. When using cash on delivery shipping method upon receipt, Nova Poshta additionally charges a commission for sending money back, 20 UAH + 2% of the order amount.",
+          "Payment by invoice"
+        ],
+        "areaLabel": "Choose a delivery area",
+        "areaPlaceholder": "Area",
+        "cityLabel": "Choose your city",
+        "cityPlaceholder": "City",
+        "warehouseLabel": "Select the branch or post office number",
+        "warehousePlaceholder": "Branch or post office number",
+        "notesLabel": "Notes to orders (optional)",
+        "notesPlaceholder": "Notes on your order, such as special notes for delivery",
+        "buttonText": "Place an order",
+        "errorMessages": {
+          "firstNameReq": "Enter your first name",
+          "lastNameReq": "Enter your last name",
+          "emailReq": "Enter your email",
+          "validEmail": "Enter a valid email",
+          "phoneReq": "Phone number is a required field",
+          "validPhone": "Enter a valid phone number",
+          "deliveryReq": "You need to specify the delivery method",
+          "deliveryAreaReq": "You need to specify the delivery region",
+          "deliveryCityReq": "You need to specify your city",
+          "postOfficeBranchNumReq": "You need to specify the branch number",
+          "paymentReq": "You need to specify the payment method",
+          "notesReq": "Notes must not exceed 1000 characters"
+        }
+      }
+    },
+    "successOrder": {
+      "thankYouMessage": "Thank you for your choice!",
+      "text": "We are pleased to inform you that your order has been received and is being processed. Our manager will contact you shortly to confirm and clarify the details.",
+      "buttonText": "Continue shopping",
+      "altText": "A couple of candles in glass containers"
+    },
+    "notFound": {
+      "text": "Sorry, we couldn't find what you were looking for. The page may have been deleted, moved, or never existed. Please return to the main page for further searches. Sorry for the inconvenience.",
+      "linkText": "Return Home",
+      "altText": "An image of a young boy holding a lit candle close to his chest, creating a warm and intimate atmosphere."
+    }
+  },
+  "search": {
+    "search": "Search",
+    "noResults": "No items found"
+  },
+  "footer": {
+    "contact": "Contact us",
+    "privacyPolicy": "Privacy policy",
+    "copyright": "All rights reserved."
+  },
+
+  "breadcrumbs": {
+    "bracelet": "Bracelet",
+    "earrings": "Earrings",
+    "necklace": "Necklace",
+    "bags": "Bags",
+    "embroidery": "Embroidery",
+    "privacyPolicy": "Privacy policy",
+    "paymentAndDelivery": "Payment and delivery",
+    "checkout": "Cart",
+    "successOrder": "Order сheckout"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "decorations": "Decorations",
+    "bracelet": "Bracelet",
+    "earrings": "Earrings",
+    "necklace": "Necklace",
+    "embroidery": "Embroidery",
+    "paymentAndDelivery": "Payment and delivery",
+    "bags": "Bags"
+  },
+
+  "relatedProducts": {
+    "title": "You may also like"
+  },
+
+  "general": {
+    "buttons": {
+      "buyNow": "Buy now",
+      "addToCart": "Add to cart",
+      "showMore": "Next page"
+    },
+    "titles": {
+      "price": "Price:",
+      "сustomCandle": "Customizable candle"
+    },
+    "messages": {
+      "notAllParam": "Each candle parameter must be selected",
+      "itemAdded": "The product was successfully added to your cart!",
+      "itemDeleted": "The product was successfully deleted!",
+      "successSubscription": "You have successfully subscribed to our newsletter!",
+      "failedRequest": "Ooops... Something went wrong!",
+      "aromaNeeded": "Please choose the aroma of your box!",
+      "orderIsPlaced": "Your order has been placed"
+    }
+  },
+
+  "metaInfo": {
+    "successOrder": {
+      "description": "Unlock a seamless shopping experience at CraftedElegance. Your order is in progress. Take action and explore more! Buy now with CraftedElegance."
+    }
+  },
+
+  "productDescription": {
+    "price": "Price",
+    "quantity": "Quantity",
+    "topNotes": "Top notes",
+    "baseNotes": "Base notes",
+    "volume": "Volume",
+    "containerVolume": "Container for ",
+    "volumeLabel": "ml",
+    "matchsticks": "Matchsticks",
+    "wick": "Wick",
+    "wax": "Wax",
+    "color": "Color",
+    "aroma": "Aroma",
+    "aromaToChoose": "Choose a flavor"
+  }
+}
