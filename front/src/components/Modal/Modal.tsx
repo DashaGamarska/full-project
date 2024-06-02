@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction, useEffect, useState } from 'react';
+import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import styles from './Modal.module.scss';
@@ -15,12 +15,12 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [originalOverflow, setOriginalOverflow] = useState<string>('');
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsVisible(false);
     setTimeout(() => {
       setActive(false);
     }, 350);
-  };
+  }, [setActive]);
 
   const onBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
@@ -30,22 +30,11 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     }
   };
 
-  const onEscKeydown = (e: KeyboardEvent): void => {
+  const onEscKeydown = useCallback((e: KeyboardEvent): void => {
     if (e.code === 'Escape') {
       closeModal();
     }
-  };
-
-  const handleBodyScroll = (): void => {
-    if (active) {
-      setOriginalOverflow(document.body.style.overflow);
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', onEscKeydown);
-    } else {
-      document.body.style.overflow = originalOverflow;
-      window.removeEventListener('keydown', onEscKeydown);
-    }
-  };
+  }, [closeModal]);
 
   useEffect(() => {
     if (active) {
@@ -54,12 +43,23 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
   }, [active]);
 
   useEffect(() => {
+    const handleBodyScroll = () => {
+      if (active) {
+        setOriginalOverflow(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+        window.addEventListener('keydown', onEscKeydown);
+      } else {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', onEscKeydown);
+      }
+    };
+
     handleBodyScroll();
 
     return () => {
       window.removeEventListener('keydown', onEscKeydown);
     };
-  }, [active, originalOverflow]);
+  }, [active, originalOverflow, onEscKeydown]);
 
   if (!active) return null;
 
