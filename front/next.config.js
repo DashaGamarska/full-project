@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/full-project',
   images: {
     domains: ['i.ibb.co'],
     remotePatterns: [

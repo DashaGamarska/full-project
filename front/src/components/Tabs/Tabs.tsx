@@ -146,10 +146,10 @@ const Tabs: React.FC<TabsI> = ({ dict, lang }) => {
           active={isModal}
           setActive={toggleModal}
         >
-          <Filter dict={dict.filter} />
+         
         </Modal>
         {/* )} */}
-        {isSmallScreen && <FilterTags dict={dict.filter} />}
+       
       </Container>
     </Section>
   );

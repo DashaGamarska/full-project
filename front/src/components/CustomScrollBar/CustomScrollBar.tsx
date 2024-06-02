@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { UseScrollbarProps } from '@components/types';
 import { OverlayScrollbars } from 'overlayscrollbars';
 
 import './overlayscrollbars.min.css';
 import './custom-scrollbar-theme-primary.css';
-
 
 const CustomScrollBar = ({
   root,
@@ -28,7 +27,7 @@ const CustomScrollBar = ({
         scrollbars.destroy();
       }
     };
-  }, [root]);
+  }, [root, primary]); // Додано primary до масиву залежностей
 
   return (
     <div
