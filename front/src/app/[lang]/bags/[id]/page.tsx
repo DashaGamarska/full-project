@@ -2,16 +2,16 @@
 
 import React, { FC } from 'react';
 import dynamic from 'next/dynamic';
-import { generateMetadata } from '@components/helpers/generateMetadata';
+import { generateMetadata } from '@components/components/helpers/generateMetadata';
 import { fetchBagsById } from '@lib/api-services/fetchBagsById';
 import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
 import { getDictionary } from '@lib/utils/dictionary';
 import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
 import type { Locale } from '@i18n';
 
-const Modal = dynamic(() => import('@components/Modal'), { ssr: false }); // Use dynamic import for Modal with ssr: false
+const Modal = dynamic(() => import('@components/components/Modal/Modal'), { ssr: false }); // Use dynamic import for Modal with ssr: false
 
-const BagsDetailsPage = dynamic(() => import('@components/BagsDetailsPage/BagsDetailsPage')); // Adjust this to your BagsDetailsPage import
+const BagsDetailsPage = dynamic(() => import('@components/components/Modal/Modal')); // Adjust this to your BagsDetailsPage import
 
 interface BagsDetailsProps {
   lang: Locale;
