@@ -41,8 +41,6 @@ const BagsDetails = async ({
   const slug = 'some-slug-value';
   const bags = await fetchBagsById({ id, slug, currentLang });
 
-  // Перевірка наявності властивості configurator
-  const configurator = page.embroidery?.configurator || {};
 
   return (
     <>
