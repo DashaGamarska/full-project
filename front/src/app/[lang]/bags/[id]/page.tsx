@@ -34,15 +34,15 @@ const BagsDetails = async ({
     relatedProducts,
     general: { buttons, messages },
     productDescription,
-    page: {
-      embroidery: { configurator },
-    },
+    page,
   } = await getDictionary(lang);
 
   const currentLang = convertToServerLocale(lang);
-
+  const slug = 'some-slug-value';
   const bags = await fetchBagsById({ id, slug, currentLang });
-  
+
+  // Перевірка наявності властивості configurator
+  const configurator = page.embroidery?.configurator || {};
 
   return (
     <>
