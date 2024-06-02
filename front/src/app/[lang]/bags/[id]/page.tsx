@@ -1,91 +1,63 @@
-import { useClient } from 'next/client';
-import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import React, { FC } from 'react';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { generateMetadata } from '@components/helpers/generateMetadata';
+import { fetchBagsById } from '@lib/api-services/fetchBagsById';
+import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
+import { getDictionary } from '@lib/utils/dictionary';
+import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
+import type { Locale } from '@i18n';
 
-import styles from './Modal.module.scss';
+const Modal = dynamic(() => import('@components/Modal'), { ssr: false }); // Use dynamic import for Modal with ssr: false
 
-interface ModalProps {
-  children: React.ReactNode;
-  onBackdropClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-  className?: string;
-  active: boolean;
-  setActive: (value: SetStateAction<boolean>) => void;
+const BagsDetailsPage = dynamic(() => import('@components/BagsDetailsPage/BagsDetailsPage')); // Adjust this to your BagsDetailsPage import
+
+interface BagsDetailsProps {
+  lang: Locale;
+  id: string;
 }
 
-const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [originalOverflow, setOriginalOverflow] = useState<string>('');
+const BagsDetails: FC<BagsDetailsProps> = ({ lang, id }) => {
+  const router = useRouter();
+  const { data: metadata } = generateMetadata({ params: { lang, id } });
+  const { data: bagsData } = fetchBagsById({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
+  const { data: similarProductsData } = fetchSimilarProducts({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
+  const { data: dictionaryData } = getDictionary(lang);
 
-  const closeModal = useCallback(() => {
-    setIsVisible(false);
-    setTimeout(() => {
-      setActive(false);
-    }, 350);
-  }, [setActive]);
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
-  const onBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    const currentTarget = e.currentTarget as HTMLElement;
-    if (target === currentTarget) {
-      closeModal();
-    }
-  };
-
-  const onEscKeydown = useCallback(
-    (e: KeyboardEvent): void => {
-      if (e.code === 'Escape') {
-        closeModal();
-      }
-    },
-    [closeModal]
-  );
-
-  useEffect(() => {
-    if (active) {
-      setIsVisible(true);
-    }
-  }, [active]);
-
-  useEffect(() => {
-    const handleBodyScroll = (): void => {
-      if (active) {
-        setOriginalOverflow(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
-        window.addEventListener('keydown', onEscKeydown);
-      } else {
-        document.body.style.overflow = originalOverflow;
-        window.removeEventListener('keydown', onEscKeydown);
-      }
-    };
-
-    handleBodyScroll();
-
-    return () => {
-      window.removeEventListener('keydown', onEscKeydown);
-    };
-  }, [active, originalOverflow, onEscKeydown]);
-
-  if (!active) return null;
-
-  const textClassNames = `${styles.backdrop} ${className || ''} ${
-    isVisible ? styles.active : ''
-  }`;
-
-  return createPortal(
-    <div
-      className={textClassNames}
-      onClick={e => {
-        onBackdropClick(e);
-      }}
-    >
-      <div className={styles.modalBox} id="modal">
-        {React.cloneElement(children as React.ReactElement, { closeModal })}
-      </div>
-    </div>,
-    document.body
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          {
+            label: dictionaryData.breadcrumbs.bags,
+            path: '/bags',
+          },
+          {
+            label: bagsData.name,
+            path: `/bags/${bagsData.id}`,
+          },
+        ]}
+        lang={lang}
+      />
+      <BagsDetailsPage
+        product={bagsData}
+        buttonsDict={dictionaryData.general.buttons}
+        toastMessages={dictionaryData.general.messages}
+        productDescriptionDict={dictionaryData.productDescription}
+        configuratorDict={dictionaryData.page.embroidery?.configurator || {}}
+      />
+      <Modal
+        active={true} // Adjust this based on your logic to show the modal
+        setActive={() => {}} // Implement setActive function
+      >
+        {/* Modal content */}
+      </Modal>
+    </>
   );
 };
 
-Modal.displayName = 'Modal';
-
-export default Modal;
+export default BagsDetails;
