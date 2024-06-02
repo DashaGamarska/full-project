@@ -1,6 +1,6 @@
 import BagsDetailsPage from '@components/components/BagsDetailsPage/BagsDetailsPage';
 import Breadcrumbs from '@components/components/Breadcrumbs/Breadcrumbs';
-import RelatedProducts from '@components/components/shared/RelatedProducts/RelatedProducts';
+//import RelatedProducts from '@components/components/shared/RelatedProducts/RelatedProducts';
 import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
 import type { Locale } from '@i18n';
 import { fetchBagsById } from '@lib/api-services/fetchBagsById';
@@ -66,10 +66,7 @@ const BagsDetails = async ({
         productDescriptionDict={productDescription}
         configuratorDict={configurator}
       />
-      <RelatedProducts
-        relatedProducts={similarProducts}
-        title={relatedProducts.title}
-      />
+     
     </>
   );
 };
