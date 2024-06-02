@@ -1,5 +1,6 @@
+
+
 import React, { FC } from 'react';
-import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { generateMetadata } from '@components/helpers/generateMetadata';
 import { fetchBagsById } from '@lib/api-services/fetchBagsById';
@@ -18,15 +19,10 @@ interface BagsDetailsProps {
 }
 
 const BagsDetails: FC<BagsDetailsProps> = ({ lang, id }) => {
-  const router = useRouter();
   const { data: metadata } = generateMetadata({ params: { lang, id } });
   const { data: bagsData } = fetchBagsById({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
   const { data: similarProductsData } = fetchSimilarProducts({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
   const { data: dictionaryData } = getDictionary(lang);
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
