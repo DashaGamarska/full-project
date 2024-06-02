@@ -1,34 +1,48 @@
-import BagsInfo from '@components/components/BagsPage/BagsInfo/BagsInfo';
-import BagsSection from '@components/components/BagsPage/BagsSection/BagsSection';
+import BagsDetailsPage from '@components/components/BagsDetailsPage/BagsDetailsPage';
 import Breadcrumbs from '@components/components/Breadcrumbs/Breadcrumbs';
+// import RelatedProducts from '@components/components/shared/RelatedProducts/RelatedProducts';
 import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
-import { Locale } from '@i18n';
-import { fetchBags } from '@lib/api-services/fetchBags';
+import type { Locale } from '@i18n';
+import { fetchBagsById } from '@lib/api-services/fetchBagsById';
+// import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
 import { getDictionary } from '@lib/utils/dictionary';
 
 export async function generateMetadata({
-  params: { lang },
+  params: { lang, id },
 }: {
-  params: { lang: Locale };
+  params: {
+    lang: Locale;
+    id: string;
+  };
 }) {
-  const { navigation } = await getDictionary(lang);
+  const currentLang = convertToServerLocale(lang);
+  const slug = 'some-slug-value'; 
+  const bags = await fetchBagsById({ id, slug, currentLang });
+
   return {
-    title: `CraftedElegance | ${navigation.bags}`,
+    title: `CraftedElegance | ${bags.title}`,
   };
 }
 
-const Bags = async ({ params: { lang } }: { params: { lang: Locale } }) => {
+const BagsDetails = async ({
+  params: { lang, id },
+}: {
+  params: { lang: Locale; id: string };
+}) => {
   const {
     breadcrumbs,
-    page: {
-      bags: { header, section, info },
-    },
-    general: {
-      messages: { itemAdded },
-    },
+    relatedProducts,
+    general: { buttons, messages },
+    productDescription,
+    page,
   } = await getDictionary(lang);
+
   const currentLang = convertToServerLocale(lang);
-  const promise = fetchBags(currentLang);
+  const slug = 'some-slug-value'; 
+  const bags = await fetchBagsById({ id, slug, currentLang });
+
+  // Перевірка наявності властивості configurator
+  const configurator = page.embroidery?.configurator || {};
 
   return (
     <>
@@ -38,19 +52,22 @@ const Bags = async ({ params: { lang } }: { params: { lang: Locale } }) => {
             label: breadcrumbs.bags,
             path: '/bags',
           },
+          {
+            label: bags.name,
+            path: `/bags/${bags.id}`,
+          },
         ]}
         lang={lang}
       />
-
-      <BagsSection
-        dict={section}
-        toastMessage={itemAdded}
-        bags={promise}
-        lang={lang}
+      <BagsDetailsPage
+        product={bags}
+        buttonsDict={buttons}
+        toastMessages={messages}
+        productDescriptionDict={productDescription}
+        configuratorDict={configurator}
       />
-      <BagsInfo dict={info} />
     </>
   );
 };
 
-export default Bags;
+export default BagsDetails;
