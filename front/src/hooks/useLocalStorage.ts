@@ -21,7 +21,7 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
   useEffect(() => {
     const storedValue = getStorageValue<T>(key, defaultValue);
     setValue(storedValue);
-  }, []);
+  }, [key, defaultValue]); // Включено key та defaultValue до масиву залежностей
 
   useEffect(() => {
     try {
@@ -31,7 +31,7 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
     } catch (error) {
       console.error('Error writing to localStorage:', error);
     }
-  }, [key, value]);
+  }, [key, value]); // Включено key та value до масиву залежностей
 
   return [value, setValue] as const;
 };
