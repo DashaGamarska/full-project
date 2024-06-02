@@ -17,7 +17,7 @@ export async function generateMetadata({
 }) {
   const currentLang = convertToServerLocale(lang);
 
-  const bags = await fetchBagsById({ id, currentLang });
+  const bags = await fetchBagsById({ id, slug, currentLang });
 
   return {
     title: `CraftedElegance | ${bags.title}`,
