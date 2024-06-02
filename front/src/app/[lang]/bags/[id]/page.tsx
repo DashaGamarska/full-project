@@ -62,7 +62,7 @@ const BagsDetails = async ({
         buttonsDict={buttons}
         toastMessages={messages}
         productDescriptionDict={productDescription}
-        configuratorDict={configurator}
+        
       />
      
     </>
