@@ -59,7 +59,7 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     return () => {
       window.removeEventListener('keydown', onEscKeydown);
     };
-  }, [active, originalOverflow]);
+  }, [active, originalOverflow, handleBodyScroll, onEscKeydown]); // Додані залежності
 
   if (!active) return null;
 
