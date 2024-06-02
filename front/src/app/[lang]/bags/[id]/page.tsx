@@ -4,7 +4,7 @@ import RelatedProducts from '@components/components/shared/RelatedProducts/Relat
 import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
 import type { Locale } from '@i18n';
 import { fetchBagsById } from '@lib/api-services/fetchBagsById';
-import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
+//import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
 import { getDictionary } from '@lib/utils/dictionary';
 
 export async function generateMetadata({
@@ -42,7 +42,7 @@ const BagsDetails = async ({
   const currentLang = convertToServerLocale(lang);
 
   const bags = await fetchBagsById({ id, currentLang });
-  const similarProducts = await fetchSimilarProducts({ id, currentLang });
+  
 
   return (
     <>
