@@ -122,17 +122,18 @@ const DeliveryForm: React.FC<DeliveryFormProps> = ({ dict, formControl }) => {
   };
 
   const fetchData = useCallback(async () => {
-    setIsLoading({ ...isLoading, area: true });
-    const areasData = await (selectedDelivery === deliveryOptions[2]
-      ? fetchAreasUkr()
-      : fetchAreas());
-    setIsLoading({ ...isLoading, area: false });
+  setIsLoading(prev => ({ ...prev, area: true }));
+  const areasData = await (selectedDelivery === deliveryOptions[2]
+    ? fetchAreasUkr()
+    : fetchAreas());
+  setIsLoading(prev => ({ ...prev, area: false }));
 
-    if (areasData) {
-      setAreas(areasData);
-      setIsAreaSelectOpen(false);
-    }
-  }, [selectedDelivery, deliveryOptions]);
+  if (areasData) {
+    setAreas(areasData);
+    setIsAreaSelectOpen(false);
+  }
+}, [selectedDelivery, deliveryOptions, setIsLoading]);
+
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchDataCity = async () => {
@@ -167,32 +168,44 @@ const DeliveryForm: React.FC<DeliveryFormProps> = ({ dict, formControl }) => {
   };
 
   useEffect(() => {
+  setValue('payment', selectedPayment);
+}, [selectedPayment, setValue]);
+
+useEffect(() => {
+  if (selectedAreas && !selectedCity && cities.length === 0) {
+    fetchDataCity();
+  }
+
+  fetchDataWarehouse();
+}, [cities, fetchDataCity, fetchDataWarehouse, selectedAreas, selectedCity, selectedDelivery]);
+
+useEffect(() => {
+  if (
+    (selectedDelivery === deliveryOptions[2] && areas.length === 25) ||
+    (selectedDelivery !== deliveryOptions[2] && areas.length === 26)
+  ) {
     fetchData();
-    setValue('payment', selectedPayment);
-  }, [fetchData]);
+    setSelectedAreas(null);
+    setAreas([]);
+    setSelectedCity(null);
+    setCities([]);
+  }
+  setSelectedWarehouse(null);
+  setWarehouse([]);
+}, [areas.length, deliveryOptions, fetchData, selectedDelivery]);
 
-  useEffect(() => {
-    if (selectedAreas && !selectedCity && cities.length === 0) {
-      fetchDataCity();
-    }
+useEffect(() => {
+  fetchDataWarehouse();
+}, [selectedCity, selectedAreas, selectedDelivery, fetchDataWarehouse]);
 
-    fetchDataWarehouse();
-  }, [cities, isAreaSelectOpen, selectedAreas, selectedCity, selectedDelivery]);
+useEffect(() => {
+  fetchData();
+}, [fetchData]);
 
-  useEffect(() => {
-    if (
-      (selectedDelivery === deliveryOptions[2] && areas.length === 25) ||
-      (selectedDelivery !== deliveryOptions[2] && areas.length === 26)
-    ) {
-      fetchData();
-      setSelectedAreas(null);
-      setAreas([]);
-      setSelectedCity(null);
-      setCities([]);
-    }
-    setSelectedWarehouse(null);
-    setWarehouse([]);
-  }, [areas.length, deliveryOptions, fetchData, selectedDelivery]);
+useEffect(() => {
+  fetchData();
+}, [selectedDelivery, deliveryOptions, fetchData]);
+
 
   const selectOptionsArea = areas.map(option =>
     selectedDelivery === deliveryOptions[2]
