@@ -3,7 +3,7 @@ import Container from '@components/components/Container/Container';
 import Section from '@components/components/Section/Section';
 import Typography from '@components/components/Typography/Typography';
 
-import bg from '../../../../public/images/boxes/boxes_info/boxes_info_bg.jpg';
+//import bg from '../../../../public/images/boxes/boxes_info/boxes_info_bg.jpg';
 
 import styles from './BagsInfo.module.scss';
 
