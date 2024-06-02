@@ -19,10 +19,9 @@ interface BagsDetailsProps {
 }
 
 const BagsDetails: FC<BagsDetailsProps> = ({ lang, id }) => {
-  const { data: metadata } = generateMetadata({ params: { lang, id } });
-  const { data: bagsData } = fetchBagsById({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
-  const { data: similarProductsData } = fetchSimilarProducts({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
-  const { data: dictionaryData } = getDictionary(lang);
+const { data: bagsData } = fetchBagsById({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
+   // const { data: similarProductsData } = fetchSimilarProducts({ id, slug: 'some-slug-value', currentLang: convertToServerLocale(lang) });
+    const { data: dictionaryData } = getDictionary(lang);
 
   return (
     <>
@@ -50,7 +49,7 @@ const BagsDetails: FC<BagsDetailsProps> = ({ lang, id }) => {
         active={true} // Adjust this based on your logic to show the modal
         setActive={() => {}} // Implement setActive function
       >
-        {/* Modal content */}
+     
       </Modal>
     </>
   );
