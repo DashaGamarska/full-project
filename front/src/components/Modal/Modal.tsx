@@ -1,6 +1,6 @@
 import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useClient } from 'next/client'; // Import useClient from Next.js
+import { useClient } from 'next/client'; // Імпортуйте useClient з Next.js
 
 import styles from './Modal.module.scss';
 
@@ -65,6 +65,9 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     };
   }, [active, originalOverflow, onEscKeydown]);
 
+  // Позначте компонент як клієнтський за допомогою useClient
+  useClient();
+
   if (!active) return null;
 
   const textClassNames = `${styles.backdrop} ${className || ''} ${
@@ -88,5 +91,4 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
 
 Modal.displayName = 'Modal';
 
-// Mark the component as a client component using useClient
-export default useClient()(Modal);
+export default Modal;
