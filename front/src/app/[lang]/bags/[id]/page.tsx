@@ -1,78 +1,90 @@
-import BagsDetailsPage from '@components/components/BagsDetailsPage/BagsDetailsPage';
-import Breadcrumbs from '@components/components/Breadcrumbs/Breadcrumbs';
-// import RelatedProducts from '@components/components/shared/RelatedProducts/RelatedProducts';
-import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
-import type { Locale } from '@i18n';
-import { fetchBagsById } from '@lib/api-services/fetchBagsById';
-// import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
-import { getDictionary } from '@lib/utils/dictionary';
+import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
-export async function generateMetadata({
-  params: { lang, id },
-}: {
-  params: {
-    lang: Locale;
-    id: string;
-  };
-}) {
-  const currentLang = convertToServerLocale(lang);
-  const slug = 'some-slug-value';
+import styles from './Modal.module.scss';
 
-  const bags = await fetchBagsById({ id, slug, currentLang });
-
-  return {
-    title: `CraftedElegance | ${bags.title}`,
-  };
+interface ModalProps {
+  children: React.ReactNode;
+  onBackdropClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  className?: string;
+  active: boolean;
+  setActive: (value: SetStateAction<boolean>) => void;
 }
 
-const BagsDetails = async ({
-  params: { lang, id },
-}: {
-  params: { lang: Locale; id: string };
-}) => {
-  const {
-    breadcrumbs,
-    relatedProducts,
-    general: { buttons, messages },
-    productDescription,
-    page,
-  } = await getDictionary(lang);
+const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [originalOverflow, setOriginalOverflow] = useState<string>('');
 
-  const currentLang = convertToServerLocale(lang);
- 
-  const bags = await fetchBagsById({ id, slug, currentLang });
+  const closeModal = useCallback(() => {
+    setIsVisible(false);
+    setTimeout(() => {
+      setActive(false);
+    }, 350);
+  }, [setActive]);
 
+  const onBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const currentTarget = e.currentTarget as HTMLElement;
+    if (target === currentTarget) {
+      closeModal();
+    }
+  };
 
-  const bags = await fetchBagsById({ id, slug, currentLang });
-  const similarProducts = await fetchSimilarProducts({ id,slug, currentLang });
+  const onEscKeydown = useCallback(
+    (e: KeyboardEvent): void => {
+      if (e.code === 'Escape') {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
-  // Перевірка наявності властивості configurator
-  const configurator = page.embroidery?.configurator || {};
+  useEffect(() => {
+    if (active) {
+      setIsVisible(true);
+    }
+  }, [active]);
 
-  return (
-    <>
-      <Breadcrumbs
-        items={[
-          {
-            label: breadcrumbs.bags,
-            path: '/bags',
-          },
-          {
-            label: bags.name,
-            path: `/bags/${bags.id}`,
-          },
-        ]}
-        lang={lang}
-      />
-      <BagsDetailsPage
-        product={bags}
-        buttonsDict={buttons}
-        toastMessages={messages}
-        productDescriptionDict={productDescription}
-        configuratorDict={configurator}
-      />
-    </>
+  useEffect(() => {
+    const handleBodyScroll = (): void => {
+      if (active) {
+        setOriginalOverflow(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+        window.addEventListener('keydown', onEscKeydown);
+      } else {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', onEscKeydown);
+      }
+    };
+
+    handleBodyScroll();
+
+    return () => {
+      window.removeEventListener('keydown', onEscKeydown);
+    };
+  }, [active, originalOverflow, onEscKeydown]);
+
+  if (!active) return null;
+
+  const textClassNames = `${styles.backdrop} ${className || ''} ${
+    isVisible ? styles.active : ''
+  }`;
+
+  return createPortal(
+    <div
+      className={textClassNames}
+      onClick={e => {
+        onBackdropClick(e);
+      }}
+    >
+      <div className={styles.modalBox} id="modal">
+        {React.cloneElement(children as React.ReactElement, { closeModal })}
+      </div>
+    </div>,
+    document.body
   );
 };
 
-export default BagsDetails;
+Modal.displayName = 'Modal';
+
+export default Modal;
