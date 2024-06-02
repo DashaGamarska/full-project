@@ -30,11 +30,14 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     }
   };
 
-  const onEscKeydown = useCallback((e: KeyboardEvent): void => {
-    if (e.code === 'Escape') {
-      closeModal();
-    }
-  }, [closeModal]);
+  const onEscKeydown = useCallback(
+    (e: KeyboardEvent): void => {
+      if (e.code === 'Escape') {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
   useEffect(() => {
     if (active) {
@@ -43,7 +46,7 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
   }, [active]);
 
   useEffect(() => {
-    const handleBodyScroll = () => {
+    const handleBodyScroll = (): void => {
       if (active) {
         setOriginalOverflow(document.body.style.overflow);
         document.body.style.overflow = 'hidden';
