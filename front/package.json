@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "is-ci || husky install"
   },
   "lint-staged": {
     "*.{json,md,html}": [
