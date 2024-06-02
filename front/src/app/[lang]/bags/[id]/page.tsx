@@ -17,6 +17,7 @@ export async function generateMetadata({
 }) {
   const currentLang = convertToServerLocale(lang);
   const slug = 'some-slug-value';
+
   const bags = await fetchBagsById({ id, slug, currentLang });
 
   return {
@@ -38,8 +39,12 @@ const BagsDetails = async ({
   } = await getDictionary(lang);
 
   const currentLang = convertToServerLocale(lang);
-  const slug = 'some-slug-value';
+ 
   const bags = await fetchBagsById({ id, slug, currentLang });
+
+
+  const bags = await fetchBagsById({ id, slug, currentLang });
+  const similarProducts = await fetchSimilarProducts({ id,slug, currentLang });
 
   // Перевірка наявності властивості configurator
   const configurator = page.embroidery?.configurator || {};
