@@ -1,5 +1,6 @@
 import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useClient } from 'next/client'; // Import useClient from Next.js
 
 import styles from './Modal.module.scss';
 
@@ -87,4 +88,5 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
 
 Modal.displayName = 'Modal';
 
-export default Modal;
+// Mark the component as a client component using useClient
+export default useClient()(Modal);
