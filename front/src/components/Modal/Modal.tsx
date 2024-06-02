@@ -1,7 +1,7 @@
 import React, { FC, SetStateAction, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useClient } from 'next/client'; // Імпортуйте useClient з Next.js
-
+  useClient();
 import styles from './Modal.module.scss';
 
 interface ModalProps {
@@ -65,8 +65,8 @@ const Modal: FC<ModalProps> = ({ children, className, active, setActive }) => {
     };
   }, [active, originalOverflow, onEscKeydown]);
 
-  // Позначте компонент як клієнтський за допомогою useClient
-  useClient();
+  
+
 
   if (!active) return null;
 
