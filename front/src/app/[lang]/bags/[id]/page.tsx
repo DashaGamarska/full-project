@@ -8,8 +8,7 @@ import { fetchSimilarProducts } from '@lib/api-services/fetchSimilarProducts';
 import { getDictionary } from '@lib/utils/dictionary';
 import { convertToServerLocale } from '@components/helpers/convertToServerLocale';
 import type { Locale } from '@i18n';
-import { useClient } from 'next/client';
-useClient();
+
 const Modal = dynamic(() => import('@components/components/Modal/Modal'), { ssr: false }); // Use dynamic import for Modal with ssr: false
 
 const BagsDetailsPage = dynamic(() => import('@components/components/Modal/Modal')); // Adjust this to your BagsDetailsPage import
