@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  BASE_URL = 'https://your-backend-app.herokuapp.com'
+  BASE_URL = 'https://full-project2.onrender.com'
   images: {
     domains: ['i.ibb.co'],
     remotePatterns: [
